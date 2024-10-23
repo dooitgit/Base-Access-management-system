@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ams_autorization_tree_view" model="ir.ui.view">
+        <field name="name">ams.autorization.tree.view</field>
+        <field name="model">ams.autorization</field>
+        <field name="arch" type="xml">
+            <!-- esta js_class es el que hace referencia a la clase creada en viewRegistry -->
+            <tree sample="1" multi_edit="1" js_class="odoo_autorization_controller">
+                <field name="autorization_secuence"/>
+                <field name="locations_ids"/>
+                <field name="users_ids"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ams_autorization_form_view" model="ir.ui.view">
+        <field name="name">ams.autorization.form.view</field>
+        <field name="model">ams.autorization</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>Autorization data</h1>
+                    <h3>
+                        <field name="autorization_secuence"/>
+                    </h3>
+                    <group>
+                        <group>
+                            <field name="autorization_type" placeholder="Autorization type"/>
+                            <field name="start_date" placeholder="Autorization start date"/>
+                            <field name="end_date" placeholder="Autorization end date"/>
+                        </group>
+                        <group>
+                            <field name="shift" placeholder="Access shift allowed"/>
+                        </group>
+                        <notebook>
+                            <page string="Users">
+                                <field name="users_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="national_identity_document"/>
+                                        <field name="biometric_data"/>                                    
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Locations">
+                                <field name="locations_ids"/>
+                            </page>
+                            <page string="Devices">
+                                <field name="device"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>            
+        </field>
+    </record>
+
+    <record id="ams_autorization_action_view" model="ir.actions.act_window">
+        <field name="name">Autorization</field>
+        <field name="res_model">ams.autorization</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

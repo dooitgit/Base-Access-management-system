@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_create_autorization_form" model="ir.ui.view">
+        <field name="name">ams.create.autorization.wizard.form</field>
+        <field name="model">ams.create.autorization.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <h3>Autorization data</h3>
+                    <group>
+                        <field name="autorization_type"/>
+                    </group>
+                    <group>
+                        <field name="autorization_start_date"/>
+                        <field name="autorization_end_date"/>
+                    </group>
+                    <group>
+                        <field name="autorization_shift"/>
+                    </group>                    
+                </group>
+                <notebook>
+                    <page string="User">
+                        <group>
+                            <field name="user_name"/>
+                            <field name="user_national_identity_document"/>
+                            <field name="user_biometric_data"/>
+                        </group>
+                    </page>
+                    <page string="Locations">
+                        <text>Para agregar mas de una ubicacion separarlas por ", " (una , y un espacio)</text>
+                        <group>
+                                <field name="location_name"/>        
+                        </group>
+                    </page>
+                    <page string="Devices">
+                        <group>
+                            <field name="autorization_device"/>
+                        </group>
+                    </page>
+                </notebook>
+                <footer>
+                    <button name="action_create_autorization" string="Create autorization" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Discard" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_create_autorization_wizard" model="ir.actions.act_window">
+        <field name="name">Create autorization</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ams.create.autorization.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_create_autorization_form"/>
+        <field name="target">new</field>    
+    </record>
+</odoo>

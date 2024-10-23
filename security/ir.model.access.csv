@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ams_location,ams_location,ams.model_ams_location,base.group_user,1,1,1,1
+acces_ams_user,ams_user,ams.model_ams_user,base.group_user,1,1,1,1
+access_ams_autorization,ams_autorization,ams.model_ams_autorization,base.group_user,1,1,1,1
+access_ams_create.autorization.wizard,ams_create.autorization.wizard,ams.model_ams_create_autorization_wizard,base.group_user,1,1,1,1

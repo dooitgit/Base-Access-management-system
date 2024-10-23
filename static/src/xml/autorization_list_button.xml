@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ams.autorization.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+            <!-- este t-if es el que especifica a qie modelo pegarle, lo de arriba es general -->
+            <button t-if="props.resModel == 'ams.autorization'" class="o_btn_hello btn btn-primary" data-hotkey="r" t-on-click="OpenCreateAutorizationWizard">
+                Create new autorization
+            </button>
+        </xpath>
+    </t>
+</templates>

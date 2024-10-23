@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="ams_menu_root" name="AMS" sequence="0">
+        <menuitem id="ams_autorizations_menu_item" action="ams_autorization_action_view"/>
+        <menuitem id="ams_user_menu_item" action="ams_location_action_view"/>
+        <menuitem id="ams_location_menu_item" action="ams_user_action_view"/>
+    </menuitem>
+</odoo>
